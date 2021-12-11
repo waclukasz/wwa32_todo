@@ -4,8 +4,21 @@
       <h2>All task</h2>
     </div>
 
-    <button class="main-add-btn">
+    <button (click)="toggleModal()" class="main-add-btn">
       <i class="fas fa-plus"></i>
     </button>
+  </div>
+
+  <div *ngIf="isModalOpened" class="modal-overlay">
+    <div class="modal-container">
+      <button (click)="toggleModal()" class="close-btn">
+        <i class="fas fa-times"></i>
+      </button>
+      <div>
+        <input type="text" [(ngModel)]="taskName">
+      </div>
+
+      <button (click)="addTask()" class="add-task-btn">Add task</button>
+    </div>
   </div>
 </div>
