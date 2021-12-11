@@ -4,6 +4,10 @@
       <h2>All task</h2>
     </div>
 
+    <div class="task-list">
+      <todo-item *ngFor="let task of taskList"  [task]="task" ></todo-item>
+    </div>
+
     <button (click)="toggleModal()" class="main-add-btn">
       <i class="fas fa-plus"></i>
     </button>
@@ -15,7 +19,7 @@
         <i class="fas fa-times"></i>
       </button>
       <div>
-        <input type="text" [(ngModel)]="taskName">
+        <input type="text" (keypress)="addTask($event)" [(ngModel)]="taskName">
       </div>
 
       <button (click)="addTask()" class="add-task-btn">Add task</button>
