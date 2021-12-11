@@ -5,7 +5,7 @@
     </div>
 
     <div class="task-list">
-      <todo-item *ngFor="let task of taskList"  [task]="task" ></todo-item>
+      <todo-item *ngFor="let task of taskList" [taskItem]="task" (updateTaskState)="setTaskCompleted($event)"></todo-item>
     </div>
 
     <button (click)="toggleModal()" class="main-add-btn">

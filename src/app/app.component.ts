@@ -36,4 +36,15 @@ export class AppComponent {
       console.log(this.taskList);
     }
   }
+
+  public setTaskCompleted(id: number) {
+    console.log('this is from app component', id);
+    this.taskList = this.taskList.map((task) => {
+      if (task.id === id) {
+        task.completed = !task.completed
+      }
+
+      return task
+    })
+  }
 }

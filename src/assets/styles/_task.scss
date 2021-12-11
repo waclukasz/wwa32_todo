@@ -26,4 +26,9 @@
     border-radius: 50%;
     box-shadow: 1px 3px 16px 0px #0000004a;
     color: #ffffff;
+    transition: all 250ms;
+
+    &:hover {
+        background-color: #8cd915;
+    }
 }

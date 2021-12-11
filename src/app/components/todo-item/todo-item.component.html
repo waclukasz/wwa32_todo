@@ -1,6 +1,6 @@
-<div [ngClass]="['task', true && 'completed']">
-    <div class="task-name">New task!</div>
-    <div class="task-toggle-btn">
-      <i *ngIf="true" class="fas fa-check"></i>
-    </div>
+<div [ngClass]="{ 'task': true, completed: taskItem.completed }">
+  <div class="task-name">{{ taskItem.name }}</div>
+  <div (click)="setTaskCompleted()" class="task-toggle-btn">
+    <i *ngIf="taskItem.completed" class="fas fa-check"></i>
   </div>
+</div>
